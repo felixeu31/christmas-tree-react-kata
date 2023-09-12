@@ -12,4 +12,9 @@ describe('Christmas tree App', () => {
     const { getByPlaceholderText } = render(<App />);
     expect(getByPlaceholderText('Indicate the desired tree height')).toBeInTheDocument();    
   });
+
+  it('should render a generate button', () => {
+    const { getByRole } = render(<App />);
+    expect(getByRole('button')).toBeInTheDocument();    
+  });
 });
