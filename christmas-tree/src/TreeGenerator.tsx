@@ -7,6 +7,7 @@ interface TreeGeneratorProps {
 function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
   return (
     <div>
+      <p>Tree Height: {treeHeight}</p>
     </div>
   );
 }
