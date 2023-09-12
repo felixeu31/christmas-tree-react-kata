@@ -13,6 +13,7 @@ function App() {
       <main>
         <form>
           <input type='number' placeholder='Indicate the desired tree height'></input>
+          <button type='submit'>Generate</button>
         </form>
       </main>
     </div>
