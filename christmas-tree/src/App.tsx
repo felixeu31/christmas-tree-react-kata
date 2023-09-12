@@ -10,6 +10,11 @@ function App() {
           Wellcome to Christmas Tree Generator!
         </p>
       </header>
+      <main>
+        <form>
+          <input type='number' placeholder='Indicate the desired tree height'></input>
+        </form>
+      </main>
     </div>
   );
 }
