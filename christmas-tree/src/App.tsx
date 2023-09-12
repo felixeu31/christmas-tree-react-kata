@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import TreeGenerator from './TreeGenerator';
 
 function App() {
+  const [treeHeight, setTreeHeight] = useState(0);
+
+  function generateTree(event: any){
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const treeHeightFormValue = parseInt(formData.get("tree-height")?.toString() || '0');
+
+    setTreeHeight(treeHeightFormValue);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,12 +22,12 @@ function App() {
         </p>
       </header>
       <main>
-        <form>
-          <input type='number' placeholder='Indicate the desired tree height'></input>
+        <form onSubmit={generateTree}>
+          <input type='number' placeholder='Indicate the desired tree height' name="tree-height"/>
           <button type='submit'>Generate</button>
         </form>
         <output>
-          <TreeGenerator treeHeight={0}></TreeGenerator>
+          <TreeGenerator treeHeight={treeHeight}></TreeGenerator>
         </output>
       </main>
     </div>

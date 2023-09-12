@@ -29,7 +29,7 @@ describe('Christmas tree App', () => {
     expect(getByRole('button')).toBeInTheDocument();    
   });
 
-  it('should render TreeGenerator and pass treeHeight as a prop', () => {
+  it('should render TreeGenerator with selected tree height', () => {
     const { getByPlaceholderText, getByText, getByTestId } = render(<App />);
     const input = getByPlaceholderText('Indicate the desired tree height');
     const generateButton = getByText('Generate');
