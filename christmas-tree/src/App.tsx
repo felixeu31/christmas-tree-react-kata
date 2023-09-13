@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import TreeGenerator from './TreeGenerator';
+import TreeGenerator from './components/TreeGenerator';
 
 function App() {
   const [treeHeight, setTreeHeight] = useState(0);

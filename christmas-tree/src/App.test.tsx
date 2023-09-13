@@ -1,9 +1,8 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
-import TreeGenerator from './TreeGenerator';
 
-jest.mock('./TreeGenerator', () => {
+jest.mock('./components/TreeGenerator', () => {
   return function MockedTreeGenerator(props: any) {
     return (
       <div data-testid="tree-generator">
