@@ -10,3 +10,9 @@ navigation bar: <nav>.
 main content: <main>, with various content subsections represented by <article>, <section>, and <div> elements.
 sidebar: <aside>; often placed inside <main>.
 footer: <footer>.
+
+# Doubts
+
+- Testing library is not supposed to check id's? but test-id is ok?
+- How render functions within a component should be splitted
+- How to verify generated tree

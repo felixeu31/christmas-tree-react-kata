@@ -5,11 +5,19 @@ interface TreeGeneratorProps {
 }
 
 function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
-  return (
-    <div>
-      <p>Tree Height: {treeHeight}</p>
-    </div>
-  );
+  if (treeHeight === 0) {
+    return (      
+      <p>Please, select height and generate to get your tree</p>
+    );
+  }
+  else{
+    return (      
+      <div data-testid='tree'>      
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X<br />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+      </div>
+    );
+  }
 }
 
 export default TreeGenerator;
