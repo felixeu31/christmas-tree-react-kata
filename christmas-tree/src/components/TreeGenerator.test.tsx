@@ -27,5 +27,18 @@ describe('Tree generator', () => {
       expect(renderedTree.innerHTML).toBe('X<br>'+
       'XXX<br>'+
       '|')
-    });    
+    });  
+    
+    
+    it('should render tree of height 3', () => {
+      const { getByTestId } = render(<TreeGenerator treeHeight={3}/>);
+
+      const renderedTree = getByTestId("tree");
+
+      expect(renderedTree).toBeInTheDocument();
+      expect(renderedTree.innerHTML).toBe('X<br>'+
+      'XXX<br>'+
+      'XXXXX<br>'+
+      '|')
+    });  
 });
