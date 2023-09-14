@@ -6,18 +6,21 @@ interface TreeGeneratorProps {
 
 function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
   if (treeHeight === 0) {
-    return (      
-      <p>Please, select height and generate to get your tree</p>
-    );
+    return InsertHeightWarning();
   }
-  else{
-    return (      
-      <div data-testid='tree'>      
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X<br />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-      </div>
-    );
-  }
+  
+  return TreeRender(treeHeight);
 }
 
 export default TreeGenerator;
+
+function TreeRender(treeHeight: number) {
+  return <div data-testid='tree'>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X<br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+  </div>;
+}
+
+function InsertHeightWarning() {
+  return <p>Please, select height and generate to get your tree</p>;
+}
