@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface TreeGeneratorProps {
   treeHeight: number; // Define the prop for treeHeight
 }
@@ -9,13 +7,12 @@ function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
     return InsertHeightWarning();
   }
   
-  return TreeRender(treeHeight);
+  return Tree(treeHeight);
 }
 
 export default TreeGenerator;
 
-function TreeRender(treeHeight: number) {
-
+function Tree(treeHeight: number) {
   return <div data-testid='tree'>
     {TreeBody(treeHeight)}
     {TreeFoot()}
@@ -23,25 +20,22 @@ function TreeRender(treeHeight: number) {
 }
 
 function TreeBody(treeHeight: number){
-  if (treeHeight === 3) {
-    return <>
-    X<br />
-    XXX<br />
-    XXXXX<br />
-    </>;
+  let treeBranches = [];
+
+  for (let branchLevel = 1; branchLevel <= treeHeight; branchLevel++) {
+    treeBranches.push(TreeBranch(branchLevel));    
   }
 
-  if (treeHeight === 2) {
-    return <>
-    X<br />
-    XXX<br />
-    </>;
-  }
+  return treeBranches;
+}
 
+function TreeBranch(branchLevel: number){
   return <>
-    X<br />
+    {'X'.repeat(branchLevel * 2 - 1)}
+    <br />
   </>;
 }
+
 function TreeFoot(){
   return <>|</>;
 }
