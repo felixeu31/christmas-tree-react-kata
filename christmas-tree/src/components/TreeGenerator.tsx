@@ -15,27 +15,35 @@ function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
 export default TreeGenerator;
 
 function TreeRender(treeHeight: number) {
+
+  return <div data-testid='tree'>
+    {TreeBody(treeHeight)}
+    {TreeFoot()}
+  </div>;
+}
+
+function TreeBody(treeHeight: number){
   if (treeHeight === 3) {
-    return <div data-testid='tree'>
-      X<br />
-      XXX<br />
-      XXXXX<br />
-      |
-    </div>;
+    return <>
+    X<br />
+    XXX<br />
+    XXXXX<br />
+    </>;
   }
 
   if (treeHeight === 2) {
-    return <div data-testid='tree'>
-      X<br />
-      XXX<br />
-      |
-    </div>;
+    return <>
+    X<br />
+    XXX<br />
+    </>;
   }
 
-  return <div data-testid='tree'>
+  return <>
     X<br />
-    |
-  </div>;
+  </>;
+}
+function TreeFoot(){
+  return <>|</>;
 }
 
 function InsertHeightWarning() {
