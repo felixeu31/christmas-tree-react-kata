@@ -27,8 +27,7 @@ describe('Tree generator', () => {
       expect(renderedTree.innerHTML).toBe('X<br>'+
       'XXX<br>'+
       '|')
-    });  
-    
+    });      
     
     it('should render tree of height 3', () => {
       const { getByTestId } = render(<TreeGenerator treeHeight={3}/>);

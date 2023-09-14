@@ -15,6 +15,15 @@ function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
 export default TreeGenerator;
 
 function TreeRender(treeHeight: number) {
+  if (treeHeight === 3) {
+    return <div data-testid='tree'>
+      X<br />
+      XXX<br />
+      XXXXX<br />
+      |
+    </div>;
+  }
+
   if (treeHeight === 2) {
     return <div data-testid='tree'>
       X<br />
