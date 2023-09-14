@@ -40,4 +40,20 @@ describe('Tree generator', () => {
       'XXXXX<br>'+
       '|')
     });  
+
+    
+    it('should render tree of height 6', () => {
+      const { getByTestId } = render(<TreeGenerator treeHeight={6}/>);
+
+      const renderedTree = getByTestId("tree");
+
+      expect(renderedTree).toBeInTheDocument();
+      expect(renderedTree.innerHTML).toBe('X<br>'+
+      'XXX<br>'+
+      'XXXXX<br>'+
+      'XXXXXXX<br>'+
+      'XXXXXXXXX<br>'+
+      'XXXXXXXXXXX<br>'+
+      '|')
+    }); 
 });
