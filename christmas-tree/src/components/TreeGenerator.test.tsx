@@ -14,7 +14,9 @@ describe('Tree generator', () => {
         const renderedTree = getByTestId("tree");
 
         expect(renderedTree).toBeInTheDocument();
-        expect(renderedTree.innerHTML).toBe('&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X<br>'+
-        '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|')
+        expect(renderedTree.innerHTML).toBe('X<br>'+
+        '|')
     });
+
+    
 });

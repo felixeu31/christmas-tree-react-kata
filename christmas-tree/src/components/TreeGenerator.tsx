@@ -16,8 +16,8 @@ export default TreeGenerator;
 
 function TreeRender(treeHeight: number) {
   return <div data-testid='tree'>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;X<br />
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+    X<br />
+    |
   </div>;
 }
 
