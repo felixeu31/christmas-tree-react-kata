@@ -19,7 +19,7 @@ describe('Tree generator', () => {
     });
     
     it('should render tree of height 2', () => {
-      const { getByTestId } = render(<TreeGenerator treeHeight={1}/>);
+      const { getByTestId } = render(<TreeGenerator treeHeight={2}/>);
 
       const renderedTree = getByTestId("tree");
 
