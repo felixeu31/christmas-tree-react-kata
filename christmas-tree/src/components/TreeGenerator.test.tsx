@@ -40,7 +40,6 @@ describe('Tree generator', () => {
       'XXXXX<br>'+
       '|')
     });  
-
     
     it('should render tree of height 6', () => {
       const { getByTestId } = render(<TreeGenerator treeHeight={6}/>);
@@ -56,4 +55,10 @@ describe('Tree generator', () => {
       'XXXXXXXXXXX<br>'+
       '|')
     }); 
+
+    it('should render warning message when height is out of range', () => {
+      const { getByText } = render(<TreeGenerator treeHeight={-1}/>);
+      
+      expect(getByText('The height introduced is invalid, please introduce a value between 0 and 20')).toBeInTheDocument();      
+    });
 });
