@@ -59,6 +59,6 @@ describe('Tree generator', () => {
     it('should render warning message when height is out of range', () => {
       const { getByText } = render(<TreeGenerator treeHeight={-1}/>);
       
-      expect(getByText('The height introduced is invalid, please introduce a value between 0 and 20')).toBeInTheDocument();      
+      expect(getByText('The height introduced is invalid, please introduce a value between 1 and 20')).toBeInTheDocument();      
     });
 });

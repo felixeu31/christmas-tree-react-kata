@@ -4,7 +4,11 @@ interface TreeGeneratorProps {
 
 function TreeGenerator({ treeHeight }: TreeGeneratorProps) {
   if (treeHeight === 0) {
-    return InsertHeightWarning();
+    return <p>Please, select height and generate to get your tree</p>;
+  }
+
+  if (treeHeight < 1 || treeHeight > 20) {
+    return <p>The height introduced is invalid, please introduce a value between 1 and 20</p>;
   }
   
   return Tree(treeHeight);
@@ -38,8 +42,4 @@ function TreeBranch(branchLevel: number){
 
 function TreeFoot(){
   return <>|</>;
-}
-
-function InsertHeightWarning() {
-  return <p>Please, select height and generate to get your tree</p>;
 }
